@@ -1,0 +1,1 @@
+check ALL=(ROOT) NOPASSWD: /usr/lib/nagios/plugins/check_apt, /usr/sbin/arp 
