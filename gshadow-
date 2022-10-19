@@ -56,3 +56,4 @@ uuidd:!::
 tcpdump:!::
 check:!::
 _chrony:!::
+sssd:!::

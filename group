@@ -57,3 +57,4 @@ tcpdump:x:117:
 check:x:1000:
 _chrony:x:118:
 sssd:x:119:
+wireshark:x:120:
