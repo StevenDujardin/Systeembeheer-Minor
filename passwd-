@@ -28,4 +28,5 @@ uuidd:x:108:116::/run/uuidd:/usr/sbin/nologin
 tcpdump:x:109:117::/nonexistent:/usr/sbin/nologin
 check:x:1000:1000:,,,:/home/check:/bin/bash
 _chrony:x:110:118:Chrony daemon,,,:/var/lib/chrony:/usr/sbin/nologin
-sssd:x:111:119::/var/lib/sss:/usr/sbin/nologin
+sssd:x:111:119:SSSD system user,,,:/var/lib/sss:/usr/sbin/nologin
+ntp:x:112:121::/nonexistent:/usr/sbin/nologin
