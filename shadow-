@@ -30,3 +30,4 @@ check:$y$j9T$BPptToJj6AOSz4XLuy.ep.$yovbI8TNmvbNLsYsdLuOpm0kEg7OneP/FzMfM.P12RC:
 _chrony:*:19283:0:99999:7:::
 sssd:*:19283:0:99999:7:::
 ntp:*:19309:0:99999:7:::
+bind:*:19311:0:99999:7:::

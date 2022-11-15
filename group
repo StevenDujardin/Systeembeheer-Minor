@@ -59,3 +59,4 @@ _chrony:x:118:
 sssd:x:119:
 wireshark:x:120:
 ntp:x:121:
+bind:x:122:
