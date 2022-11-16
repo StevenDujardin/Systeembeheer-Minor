@@ -27,17 +27,3 @@ ns2     IN      A       193.191.177.4
 @       IN      AAAA    ::1
 
 
-;
-; BIND reverse data file for local loopback interface
-;
-$TTL    600
-@       IN      SOA     ns.steven.dujardin.sb.uclllabs.be. root.localhost. (
-                              2         ; Serial
-                            300         ; Refresh
-                            300         ; Retry
-                            300         ; Expire
-                            300 )       ; Negative Cache TTL
-;
-@       IN      NS      ns.
-83	IN	PTR	mail.ns.steven-dujardin.uclllabs.be
-80	IN	PTR	web.ns.steven-dujardin.uclllabs.be
