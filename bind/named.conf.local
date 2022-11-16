@@ -5,6 +5,7 @@
 // Consider adding the 1918 zones here, if they are not used in your
 // organization
 //include "/etc/bind/zones.rfc1918";
+include "/etc/bind/named.conf.mrt-zones";
 
 zone "steven-dujardin.sb.uclllabs.be" {
 	type master;
@@ -16,3 +17,11 @@ zone "0.42.10.in-addr.arpa" {
         notify no;
         file "/etc/bind/db.10";
 };
+
+zone "stijn-paepe.sb.uclllabs.be"{
+	type slave;
+	file "db.stijn-paepe.sb.uclllabs.be";
+	masters {193.191.177.221;};
+};
+
+

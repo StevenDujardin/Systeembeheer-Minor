@@ -1,0 +1,8 @@
+#!/bin/bash
+
+
+
+serialline=$(grep "Serial" /etc/bind/db.steven-dujardin.sb.uclllabs.be)
+serialnumber=$(cat /etc/bind/db.steven-dujardin.sb.uclllabs.be | grep -P 'Serial' | grep -P [0-9] |grep -o -E '[0-9]+');
+newSerial=$(($serialnumber + 1))
+sed -e "s/$serialnumber\t\t;\sSerial/$newSerial\t\t; Serial/" /etc/bind/db.steven-dujardin.sb.uclllabs.be

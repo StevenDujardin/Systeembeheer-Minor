@@ -1,0 +1,41 @@
+#!/bin/bash
+
+zz = $1
+
+echo 'zone "${zz}.steven-dujardin.sb.uclllabs.be"{
+	type master;
+	file "/etc/bind/db.${zz}.steven-dujardin.sb.uclllabs.be"
+};' >> named.conf.mrt-zones
+
+echo 'Entry created in mrt-zones'
+
+echo '\$TTL 300
+	\$ORIGIN ${zz}.steven-dujardin.sb.uclllabs.be
+	@	IN	SOA	${zz}.steven-dujardin.sb.uclllabs.be. root(
+				1	; Serial
+				300	; Refresh
+				300	; Retry
+				300	; Expire
+				300 ) ;  Negative Cache TTL
+
+;name servers
+	IN	NS 	ns.steven-dujardin.sb.uclllabs.be.
+ns	IN	A	193.191.177.234
+
+' >> /etc/bind/db.${zz}.steven-dujardin.sb.uclllabs.be
+
+echo "${zz}	IN	NS	ns.steven-dujardin.sb.uclllabs.be." >> /etc/bind/db.steven-dujardin.sb.uclllabs.be
+
+echo 'SOA record added'
+
+serialline=$(grep "Serial" /etc/bind/db.steven-dujardin.sb.uclllabs.be)
+serialnumber=$(cat /etc/bind/db.steven-dujardin.sb.uclllabs.be | grep -P 'Serial' | grep -P [0-9] |grep -o -E '[0-9]+');
+newSerial=$(($serialnumber + 1))
+sed -i "s/$serialnumber\t\t;\sSerial/$newSerial\t\t; Serial/" /etc/bind/db.steven-dujardin.sb.uclllabs.be
+echo $newSerial;
+echo -e "serial updated, restarting bind9"
+
+echo 'Finished'
+
+systemctl restart bind9
+

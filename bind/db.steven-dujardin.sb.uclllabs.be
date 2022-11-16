@@ -12,6 +12,8 @@ $ORIGIN steven-dujardin.sb.uclllabs.be.
 			    300		; Expire
 			    300 )	; Negative Cache TTL
 ;
+
+
 ;A records
 	IN	A	193.191.177.234
 @	IN	NS	localhost.
@@ -19,7 +21,7 @@ www	IN	A	193.191.177.234
 www1	IN	A	193.191.177.234
 www2	IN	A	193.191.177.234
 ns	IN	A	193.191.177.234
-ns1	IN	A	193.191.177.234
+ns1	IN	A	193.191.177.254
 ns2	IN	A	193.191.177.4
 test	IN	A	193.191.177.254
 mx	IN	A	193.191.177.234
