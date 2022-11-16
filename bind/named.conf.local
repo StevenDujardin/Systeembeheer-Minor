@@ -6,7 +6,13 @@
 // organization
 //include "/etc/bind/zones.rfc1918";
 
-zone "ns.steven-dujardin.sb.uclllabs.be" {
+zone "steven-dujardin.sb.uclllabs.be" {
 	type master;
 	file "/etc/bind/db.steven-dujardin.sb.uclllabs.be";
+};
+
+zone "0.42.10.in-addr.arpa" {
+        type master;
+        notify no;
+        file "/etc/bind/db.10";
 };
