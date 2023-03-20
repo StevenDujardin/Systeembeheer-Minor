@@ -57,3 +57,6 @@ tcpdump:!::
 check:!::
 _chrony:!::
 sssd:!::
+wireshark:!::
+ntp:!::
+bind:!::

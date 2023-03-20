@@ -1,0 +1,13 @@
+[Unit]
+Description=Load static arp entries
+ConditionPathExists=/etc/ethers
+DefaultDependencies=on
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/sbin/arp -f /etc/ethers
+
+[Install]
+WantedBy=multi-user.target
