@@ -5,11 +5,19 @@
 // Consider adding the 1918 zones here, if they are not used in your
 // organization
 //include "/etc/bind/zones.rfc1918";
-include "/etc/bind/named.conf.mrt-zones";
 
+key "certbot." {
+	algorithm hmac-sha512;
+	secret "rxKfvHEAibMBm5q4AdS+THwh7G25iqMbnv5G+3Cgxg7GMWA8e2M5V54GHvp4shjMXeb636MHcEuK3VBxJ2Cs1w==";
+};
 zone "steven-dujardin.sb.uclllabs.be" {
 	type master;
 	file "/etc/bind/db.steven-dujardin.sb.uclllabs.be";
+        allow-query { any; };
+        check-names warn;
+        update-policy {
+                grant certbot. name _acme-challenge.steven-dujardin.sb.uclllabs.be. txt;
+        };
 };
 
 zone "0.42.10.in-addr.arpa" {
@@ -17,11 +25,10 @@ zone "0.42.10.in-addr.arpa" {
         notify no;
         file "/etc/bind/db.10";
 };
+include "/etc/bind/named.conf.mrt-zones";
 
-zone "stijn-paepe.sb.uclllabs.be"{
-	type slave;
-	file "db.stijn-paepe.sb.uclllabs.be";
-	masters {193.191.177.221;};
-};
-
-
+//;zone "stijn-paepe.sb.uclllabs.be"{
+//;	type slave;
+//;	file "db.stijn-paepe.sb.uclllabs.be";
+//;	masters {193.191.177.221;};
+//;};

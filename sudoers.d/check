@@ -1,1 +1,3 @@
 check ALL=(ROOT) NOPASSWD: /usr/lib/nagios/plugins/check_apt, /usr/sbin/arp 
+check ALL=(ROOT) NOPASSWD: /etc/scripts/dns_add_record,/etc/scripts/dns_add_zone
+check ALL=(ROOT) NOPASSWD: /usr/local/sbin/dns_add_record,/usr/local/sbin/dns_add_zone

@@ -1,9 +1,5 @@
 #!/bin/bash
 
-if ["$EUID" -ne 0]
-  then echo "Run with root acces";
-  exit 1;
-fi
 
 if [ -n "$1" ]; then
 if [ $1 = "-t" ]; then
@@ -12,26 +8,26 @@ if [ $1 = "-t" ]; then
         echo -e "$3             IN      A       $4" >> /etc/bind/db."$5"
         serialnumber=$(cat /etc/bind/db.$5 | grep -P 'Serial' | grep -P [0-9] |grep -o -E '[0-9]+');
         newSerial=$(($serialnumber + 1))
-        sed -i "s/$serialnumber\t\t;\sSerial/$newSerial\t\t; Serial/" /etc/bind/db.$5
+        sed -i "s/.*Serial*./$newSerial ; Serial/" /etc/bind/db.$5
         echo $newSerial;
         echo -e "serial updated, restarting bind9"
 	;;
 
         MX )
-        echo -e "@              IN      MX      10      $3.$5." >> /etc/bind/db."$5"
-        echo -e "$3             IN      A       $4" >> /etc/bind/db."$5"
-	serialnumber=$(cat /etc/bind/db.$5 | grep -P 'Serial' | grep -P [0-9] |grep -o -E '[0-9]+');
+        echo -e "@              IN      MX      10      $3.$5." >> /etc/bind/db.steven-dujardin.sb.uclllabs.be
+        echo -e "$3             IN      A       $4" >> /etc/bind/db.steven-dujardin.sb.uclllabs.be
+	serialnumber=$(cat /etc/bind/db.steven-dujardin.sb.uclllabs.be | grep -P 'Serial' | grep -P [0-9] |grep -o -E '[0-9]+');
         newSerial=$(($serialnumber + 1))
-        sed -i "s/$serialnumber\t\t;\sSerial/$newSerial\t\t; Serial/" /etc/bind/db.$5
+        sed -i "s/.*Serial*./$newSerial ; Serial/" /etc/bind/db.steven-dujardin.sb.uclllabs.be
         echo $newSerial;
         echo -e "serial updated, restarting bind9"
         ;;
 
         CNAME )
-        echo -e "$3             IN      CNAME   $4." >> "/etc/bind/db.$4"
-	serialnumber=$(cat /etc/bind/db.$4 | grep -P 'Serial' | grep -P [0-9] |grep -o -E '[0-9]+');
+        echo -e "$3             IN      CNAME   $4." >> "/etc/bind/db.steven-dujardin.sb.uclllabs.be"
+	serialnumber=$(cat /etc/bind/db.steven-dujardin.sb.uclllabs.be | grep -P 'Serial' | grep -P [0-9] |grep -o -E '[0-9]+');
         newSerial=$(($serialnumber + 1))
-        sed -i "s/$serialnumber\t\t;\sSerial/$newSerial\t\t; Serial/" /etc/bind/db.$4
+        sed -i "s/.*Serial*./$newSerial ; Serial/" /etc/bind/db.steven-dujardin.sb.uclllabs.be
         echo $newSerial;
         echo -e "serial updated, restarting bind9"
         ;;
@@ -41,13 +37,13 @@ if [ $1 = "-t" ]; then
         echo -e "$1     IN      A       $2" >> /etc/bind/db."$3"
 	serialnumber=$(cat /etc/bind/db.$3 | grep -P 'Serial' | grep -P [0-9] |grep -o -E '[0-9]+');
         newSerial=$(($serialnumber + 1))
-        sed -i "s/$serialnumber\t\t;\sSerial/$newSerial\t\t; Serial/" /etc/bind/db.$3
+        sed -i "s/$serialnumber\t\t;\sSerial/$newSerial\t\t; Serial/" /etc/bind/db.$5
         echo $newSerial;
         echo -e "serial updated, restarting bind9"
         fi
 
         rndc reload
-        systemctl restart bind9
+        systemctl restart named
 
 else
         echo -e "Invalid syntax. Example --> dns_add_record -t A test 01.02.03.04 something.slimme-rik.sb.uclllabs.be"

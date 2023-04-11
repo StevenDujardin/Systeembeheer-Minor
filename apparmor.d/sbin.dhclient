@@ -22,6 +22,9 @@
   # see LP: #1918410
   owner @{PROC}/@{pid}/task/[0-9]*/comm rw,
 
+  # LP: #1926139
+  @{PROC}/cmdline r,
+
   /{,usr/}sbin/dhclient mr,
   # LP: #1197484 and LP: #1202203 - why is this needed? :(
   /{,usr/}bin/bash mr,

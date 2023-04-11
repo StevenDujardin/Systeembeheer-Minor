@@ -5,8 +5,8 @@
 ;
 $TTL	300
 $ORIGIN steven-dujardin.sb.uclllabs.be.
-@	IN	SOA	steven-dujardin.sb.uclllabs.be. root.steven-dujardin.sb.uclllabs.be. (
-			      1		; Serial
+@	IN	SOA  ns.steven-dujardin.sb.uclllabs.be. root.steven-dujardin.sb.uclllabs.be. (
+58 ; Serial
 			    300		; Refresh
 			    300		; Retry
 			    300		; Expire
@@ -16,7 +16,7 @@ $ORIGIN steven-dujardin.sb.uclllabs.be.
 
 ;A records
 	IN	A	193.191.177.234
-@	IN	NS	localhost.
+;@	IN	NS	localhost.
 www	IN	A	193.191.177.234
 www1	IN	A	193.191.177.234
 www2	IN	A	193.191.177.234
@@ -24,10 +24,47 @@ ns	IN	A	193.191.177.234
 ns1	IN	A	193.191.177.254
 ns2	IN	A	193.191.177.4
 test	IN	A	193.191.177.254
+test2	IN	A	193.191.177.254
 mx	IN	A	193.191.177.234
+secure  IN      A	193.191.177.234
+
 
 ;name servers
 @	IN	NS	ns.steven-dujardin.sb.uclllabs.be.
 @	IN	NS	ns1.uclllabs.be.
 @       IN      NS      ns2.uclllabs.be.
-@       IN      NS      ns.stijn-paepe.sb.uclllabs.be.
+;@       IN      NS      ns.stijn-paepe.sb.uclllabs.be.
+@	IN	AAAA	2001:6a8:2880:a077::ea
+ns	IN	AAAA	2001:6a8:2880:a077::ea
+doemaariszot	IN	NS	ns.steven-dujardin.sb.uclllabs.be.
+party	IN	NS	ns.steven-dujardin.sb.uclllabs.be.
+party2	IN	NS	ns.steven-dujardin.sb.uclllabs.be.
+party33	IN	NS	ns.steven-dujardin.sb.uclllabs.be.
+party44	IN	NS	ns.steven-dujardin.sb.uclllabs.be.
+holiday	IN	NS	ns.steven-dujardin.sb.uclllabs.be.
+holiday2	IN	NS	ns.steven-dujardin.sb.uclllabs.be.
+holiday3	IN	NS	ns.steven-dujardin.sb.uclllabs.be.
+holiday44	IN	NS	ns.steven-dujardin.sb.uclllabs.be.
+holiday55	IN	NS	ns.steven-dujardin.sb.uclllabs.be.
+zot             IN      CNAME   www.steven-dujardin.sb.uclllabs.be.
+super	IN	NS	ns.steven-dujardin.sb.uclllabs.be.
+@              IN      MX      10      mailme.steven-dujardin.sb.uclllabs.be.
+mailme             IN      A       54.45.45.54
+subzoneood7ni	IN	NS	ns.steven-dujardin.sb.uclllabs.be.
+subzoneaeph6c	IN	NS	ns.steven-dujardin.sb.uclllabs.be.
+subzonerait7p	IN	NS	ns.steven-dujardin.sb.uclllabs.be.
+subzonetiel1p	IN	NS	ns.steven-dujardin.sb.uclllabs.be.
+subzonedaep6b	IN	NS	ns.steven-dujardin.sb.uclllabs.be.
+subzonevohx4u	IN	NS	ns.steven-dujardin.sb.uclllabs.be.
+subzoneey8ied	IN	NS	ns.steven-dujardin.sb.uclllabs.be.
+subzoneech7ho	IN	NS	ns.steven-dujardin.sb.uclllabs.be.
+subzonenahh7t	IN	NS	ns.steven-dujardin.sb.uclllabs.be.
+subzoneael2th	IN	NS	ns.steven-dujardin.sb.uclllabs.be.
+subzoneul6ahh	IN	NS	ns.steven-dujardin.sb.uclllabs.be.
+subzoneiey3ku	IN	NS	ns.steven-dujardin.sb.uclllabs.be.
+subzoneraek9y	IN	NS	ns.steven-dujardin.sb.uclllabs.be.
+subzonekugh9d	IN	NS	ns.steven-dujardin.sb.uclllabs.be.
+subzonerigie6	IN	NS	ns.steven-dujardin.sb.uclllabs.be.
+subzoneae3moy	IN	NS	ns.steven-dujardin.sb.uclllabs.be.
+subzoneshoy4h	IN	NS	ns.steven-dujardin.sb.uclllabs.be.
+subzoneiuzai5	IN	NS	ns.steven-dujardin.sb.uclllabs.be.

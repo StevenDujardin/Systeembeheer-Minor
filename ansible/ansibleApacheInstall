@@ -1,0 +1,36 @@
+
+- hosts: all
+  tasks:
+  - name: Install Apache
+    apt:
+      name: apache2
+      state: latest
+
+  - name: Configure HTTP Virtual Host
+    apache2_module:
+      name: vhost_alias
+      state: present
+
+  - name: Create HTTP Virtual Host
+    apache2_vhost:
+      name: "{{ vhost_name }}"
+      port: 80
+      state: present
+      document_root: /var/www/{{ vhost_name }}
+      server_name: "{{ vhost_name }}"
+      server_aliases:
+        - www.{{ vhost_name }}
+
+  - name: Configure HTTPS Virtual Host
+    apache2_module:
+      name: ssl
+      state: present
+
+  - name: Create HTTPS Virtual Host
+    apache2_vhost:
+      name: "{{ vhost_name }}"
+      port: 443
+      state: present
+      document_root: /var/www/{{ vhost_name }}
+      server_name: "{{ vhost_name }}"
+     

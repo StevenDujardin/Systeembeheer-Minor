@@ -1,0 +1,145 @@
+
+zone "doemaariszot.steven-dujardin.sb.uclllabs.be" {
+type master;
+file "/etc/bind/db.doemaariszot.steven-dujardin.sb.uclllabs.be";
+};
+
+zone "party.steven-dujardin.sb.uclllabs.be" { 
+type master;
+file "/etc/bind/db.party.steven-dujardin.sb.uclllabs.be";
+};
+
+zone "party2.steven-dujardin.sb.uclllabs.be" {
+type master;
+file "/etc/bind/db.party2.steven-dujardin.sb.uclllabs.be";
+};
+
+zone "party33.steven-dujardin.sb.uclllabs.be" {
+type master;
+file "/etc/bind/db.party33.steven-dujardin.sb.uclllabs.be";
+};
+
+zone "party44.steven-dujardin.sb.uclllabs.be" {
+type master;
+file "/etc/bind/db.party44.steven-dujardin.sb.uclllabs.be";
+};
+
+zone "holiday.steven-dujardin.sb.uclllabs.be" {
+type master;
+file "/etc/bind/db.holiday.steven-dujardin.sb.uclllabs.be";
+};
+
+zone "holiday2.steven-dujardin.sb.uclllabs.be" {
+type master;
+file "/etc/bind/db.holiday2.steven-dujardin.sb.uclllabs.be";
+};
+
+zone "holiday3.steven-dujardin.sb.uclllabs.be" {
+type master;
+file "/etc/bind/db.holiday3.steven-dujardin.sb.uclllabs.be";
+};
+
+zone "holiday44.steven-dujardin.sb.uclllabs.be" {
+type master;
+file "/etc/bind/db.holiday44.steven-dujardin.sb.uclllabs.be";
+};
+
+zone "holiday55.steven-dujardin.sb.uclllabs.be" {
+type master;
+file "/etc/bind/db.holiday55.steven-dujardin.sb.uclllabs.be";
+};
+
+zone "super.steven-dujardin.sb.uclllabs.be" {
+type master;
+file "/etc/bind/db.super.steven-dujardin.sb.uclllabs.be";
+};
+
+zone "subzoneood7ni.steven-dujardin.sb.uclllabs.be" {
+type master;
+file "/etc/bind/db.subzoneood7ni.steven-dujardin.sb.uclllabs.be";
+};
+
+zone "subzoneaeph6c.steven-dujardin.sb.uclllabs.be" {
+type master;
+file "/etc/bind/db.subzoneaeph6c.steven-dujardin.sb.uclllabs.be";
+};
+
+zone "subzonerait7p.steven-dujardin.sb.uclllabs.be" {
+type master;
+file "/etc/bind/db.subzonerait7p.steven-dujardin.sb.uclllabs.be";
+};
+
+zone "subzonetiel1p.steven-dujardin.sb.uclllabs.be" {
+type master;
+file "/etc/bind/db.subzonetiel1p.steven-dujardin.sb.uclllabs.be";
+};
+
+zone "subzonedaep6b.steven-dujardin.sb.uclllabs.be" {
+type master;
+file "/etc/bind/db.subzonedaep6b.steven-dujardin.sb.uclllabs.be";
+};
+
+zone "subzonevohx4u.steven-dujardin.sb.uclllabs.be" {
+type master;
+file "/etc/bind/db.subzonevohx4u.steven-dujardin.sb.uclllabs.be";
+};
+
+zone "subzoneey8ied.steven-dujardin.sb.uclllabs.be" {
+type master;
+file "/etc/bind/db.subzoneey8ied.steven-dujardin.sb.uclllabs.be";
+};
+
+zone "subzoneech7ho.steven-dujardin.sb.uclllabs.be" {
+type master;
+file "/etc/bind/db.subzoneech7ho.steven-dujardin.sb.uclllabs.be";
+};
+
+zone "subzonenahh7t.steven-dujardin.sb.uclllabs.be" {
+type master;
+file "/etc/bind/db.subzonenahh7t.steven-dujardin.sb.uclllabs.be";
+};
+
+zone "subzoneael2th.steven-dujardin.sb.uclllabs.be" {
+type master;
+file "/etc/bind/db.subzoneael2th.steven-dujardin.sb.uclllabs.be";
+};
+
+zone "subzoneul6ahh.steven-dujardin.sb.uclllabs.be" {
+type master;
+file "/etc/bind/db.subzoneul6ahh.steven-dujardin.sb.uclllabs.be";
+};
+
+zone "subzoneiey3ku.steven-dujardin.sb.uclllabs.be" {
+type master;
+file "/etc/bind/db.subzoneiey3ku.steven-dujardin.sb.uclllabs.be";
+};
+
+zone "subzoneraek9y.steven-dujardin.sb.uclllabs.be" {
+type master;
+file "/etc/bind/db.subzoneraek9y.steven-dujardin.sb.uclllabs.be";
+};
+
+zone "subzonekugh9d.steven-dujardin.sb.uclllabs.be" {
+type master;
+file "/etc/bind/db.subzonekugh9d.steven-dujardin.sb.uclllabs.be";
+};
+
+zone "subzonerigie6.steven-dujardin.sb.uclllabs.be" {
+type master;
+file "/etc/bind/db.subzonerigie6.steven-dujardin.sb.uclllabs.be";
+};
+
+zone "subzoneae3moy.steven-dujardin.sb.uclllabs.be" {
+type master;
+file "/etc/bind/db.subzoneae3moy.steven-dujardin.sb.uclllabs.be";
+};
+
+zone "subzoneshoy4h.steven-dujardin.sb.uclllabs.be" {
+type master;
+file "/etc/bind/db.subzoneshoy4h.steven-dujardin.sb.uclllabs.be";
+};
+
+zone "subzoneiuzai5.steven-dujardin.sb.uclllabs.be" {
+type master;
+file "/etc/bind/db.subzoneiuzai5.steven-dujardin.sb.uclllabs.be";
+};

@@ -10,6 +10,12 @@
 # default value.
 
 Include /etc/ssh/sshd_config.d/*.conf
+#ListenAddress [193.191.177.234]:25
+#ListenAddress [193.191.177.234]:53
+#ListenAddress [193.191.177.234]:80
+#ListenAddress [193.191.177.234]:443
+#ListenAddress [193.191.177.234]:993
+ListenAddress [193.191.177.234]:22345
 
 Port 22345
 #AddressFamily any

@@ -18,7 +18,7 @@ voice:x:22:
 cdrom:x:24:
 floppy:x:25:
 tape:x:26:
-sudo:x:27:
+sudo:x:27:check2
 audio:x:29:
 dip:x:30:
 www-data:x:33:
@@ -60,3 +60,12 @@ sssd:x:119:
 wireshark:x:120:
 ntp:x:121:
 bind:x:122:
+mysql:x:123:
+rtkit:x:124:
+check2:x:1001:
+geoclue:x:125:
+netdev:x:126:
+avahi:x:127:
+ftp:x:128:
+mystery1:x:1002:
+mystery1_2014:x:1003:

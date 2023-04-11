@@ -18,7 +18,7 @@ voice:*::
 cdrom:*::
 floppy:*::
 tape:*::
-sudo:*::
+sudo:*::check2
 audio:*::
 dip:*::
 www-data:*::
@@ -60,3 +60,12 @@ sssd:!::
 wireshark:!::
 ntp:!::
 bind:!::
+mysql:!::
+rtkit:!::
+check2:!::
+geoclue:!::
+netdev:!::
+avahi:!::
+ftp:!::
+mystery1:!::
+mystery1_2014:!::

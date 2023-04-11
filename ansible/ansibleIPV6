@@ -1,0 +1,22 @@
+- name: Add ipv6 address
+  hosts: all
+  become: yes
+  tasks:
+    - name: Add ipv6 address
+      lineinfile:
+        path: /etc/systemd/network/eth0.network
+        line: "Address={{ item }}"
+        state: present
+      with_items:
+        - "2001:6a8:2880:a077::ea"
+    - name: Add ipv6 gateway
+      lineinfile:
+        path: /etc/systemd/network/eth0.network
+        line: "Gateway={{ item }}"
+        state: present
+      with_items:
+        - "2001:6a8:2880:a077::1"
+    - name: Add .pve-ignore.eth0.network
+      file:
+        path: /etc/systemd/network/.pve-ignore.eth0.network
+

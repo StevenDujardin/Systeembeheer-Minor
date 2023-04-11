@@ -1,0 +1,4 @@
+zone "${zz}.steven-dujardin.sb.uclllabs.be"{
+	type master;
+	file "/etc/bind/db.${zz}.steven-dujardin.sb.uclllabs.be"
+};

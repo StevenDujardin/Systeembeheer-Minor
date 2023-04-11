@@ -61,6 +61,10 @@ profile tcpdump /usr/bin/tcpdump {
 
   /usr/bin/tcpdump mr,
 
+  # allow printing to stdout/stderr when inside a container
+  # (LP: #1667016)
+  /dev/pts/* rw,
+
   # Site-specific additions and overrides. See local/README for details.
   #include <local/usr.bin.tcpdump>
 }
