@@ -143,3 +143,8 @@ zone "subzoneiuzai5.steven-dujardin.sb.uclllabs.be" {
 type master;
 file "/etc/bind/db.subzoneiuzai5.steven-dujardin.sb.uclllabs.be";
 };
+
+zone "subzoneom6kie.steven-dujardin.sb.uclllabs.be" {
+type master;
+file "/etc/bind/db.subzoneom6kie.steven-dujardin.sb.uclllabs.be";
+};

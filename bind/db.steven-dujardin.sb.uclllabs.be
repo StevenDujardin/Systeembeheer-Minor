@@ -6,7 +6,7 @@
 $TTL	300
 $ORIGIN steven-dujardin.sb.uclllabs.be.
 @	IN	SOA  ns.steven-dujardin.sb.uclllabs.be. root.steven-dujardin.sb.uclllabs.be. (
-58 ; Serial
+59 ; Serial
 			    300		; Refresh
 			    300		; Retry
 			    300		; Expire
@@ -68,3 +68,4 @@ subzonerigie6	IN	NS	ns.steven-dujardin.sb.uclllabs.be.
 subzoneae3moy	IN	NS	ns.steven-dujardin.sb.uclllabs.be.
 subzoneshoy4h	IN	NS	ns.steven-dujardin.sb.uclllabs.be.
 subzoneiuzai5	IN	NS	ns.steven-dujardin.sb.uclllabs.be.
+subzoneom6kie	IN	NS	ns.steven-dujardin.sb.uclllabs.be.
