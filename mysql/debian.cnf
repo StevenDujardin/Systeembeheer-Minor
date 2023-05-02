@@ -1,14 +1,11 @@
-# THIS FILE IS OBSOLETE. STOP USING IT IF POSSIBLE.
-# This file exists only for backwards compatibility for
-# tools that run '--defaults-file=/etc/mysql/debian.cnf'
-# and have root level access to the local filesystem.
-# With those permissions one can run 'mariadb' directly
-# anyway thanks to unix socket authentication and hence
-# this file is useless. See package README for more info.
+# Automatically generated for Debian scripts. DO NOT TOUCH!
 [client]
 host     = localhost
-user     = root
+user     = debian-sys-maint
+password = sg99cTqHM2GajV0i
+socket   = /var/run/mysqld/mysqld.sock
 [mysql_upgrade]
 host     = localhost
-user     = root
-# THIS FILE WILL BE REMOVED IN A FUTURE DEBIAN RELEASE.
+user     = debian-sys-maint
+password = sg99cTqHM2GajV0i
+socket   = /var/run/mysqld/mysqld.sock

@@ -24,16 +24,17 @@ echo "${zz}	IN	NS	ns.steven-dujardin.sb.uclllabs.be." >> /etc/bind/db.steven-duj
 
 echo 'SOA record added'
 
-serialline=$(grep "Serial" /etc/bind/db.steven-dujardin.sb.uclllabs.be)
-serialnumber=$(cat /etc/bind/db.steven-dujardin.sb.uclllabs.be | grep -P 'Serial' | grep -P [0-9] |grep -o -E '[0-9]+');
+serialline=$(grep -i "Serial" /etc/bind/db.steven-dujardin.sb.uclllabs.be)
+serialnumber=$(cat /etc/bind/db.steven-dujardin.sb.uclllabs.be | grep -iP 'Serial' | grep -P [0-9] |grep -o -E '[0-9]+');
 newSerial=$(($serialnumber + 1))
-sed -i "s/$serialnumber ; Serial/$newSerial ; Serial/" /etc/bind/db.steven-dujardin.sb.uclllabs.be
+sed -i "s/$serialnumber       ; serial/$newSerial       ; serial/" /etc/bind/db.steven-dujardin.sb.uclllabs.be
 
 #sed -i "s/$serialnumber\t\t;\sSerial/$newSerial\t\t; Serial/" /etc/bind/db.steven-dujardin.sb.uclllabs.be
 echo $newSerial;
 echo -e "serial updated, restarting bind9"
 chown bind:bind /etc/bind/db.${zz}.steven-dujardin.sb.uclllabs.be
 echo 'Finished'
+cp /etc/bind/db.steven-dujardin.sb.uclllabs.be /var/lib/bind/db.steven-dujardin.sb.uclllabs.be
 
 systemctl restart named
 

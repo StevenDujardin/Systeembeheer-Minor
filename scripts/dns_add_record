@@ -6,7 +6,7 @@ if [ $1 = "-t" ]; then
         case $2 in
         A )
         echo -e "$3             IN      A       $4" >> /etc/bind/db."$5"
-        serialnumber=$(cat /etc/bind/db.$5 | grep -P 'Serial' | grep -P [0-9] |grep -o -E '[0-9]+');
+        serialnumber=$(cat /etc/bind/db.$5 | grep -iP 'Serial' | grep -P [0-9] |grep -o -E '[0-9]+');
         newSerial=$(($serialnumber + 1))
         sed -i "s/.*Serial*./$newSerial ; Serial/" /etc/bind/db.$5
         echo $newSerial;
@@ -16,18 +16,22 @@ if [ $1 = "-t" ]; then
         MX )
         echo -e "@              IN      MX      10      $3.$5." >> /etc/bind/db.steven-dujardin.sb.uclllabs.be
         echo -e "$3             IN      A       $4" >> /etc/bind/db.steven-dujardin.sb.uclllabs.be
-	serialnumber=$(cat /etc/bind/db.steven-dujardin.sb.uclllabs.be | grep -P 'Serial' | grep -P [0-9] |grep -o -E '[0-9]+');
+	serialnumber=$(cat /etc/bind/db.steven-dujardin.sb.uclllabs.be | grep -iP 'Serial' | grep -P [0-9] |grep -o -E '[0-9]+');
         newSerial=$(($serialnumber + 1))
-        sed -i "s/.*Serial*./$newSerial ; Serial/" /etc/bind/db.steven-dujardin.sb.uclllabs.be
-        echo $newSerial;
+#        sed -i "s/.*Serial*./$newSerial ; Serial/" /etc/bind/db.steven-dujardin.sb.uclllabs.be
+	sed -i "s/$serialnumber       ; serial/$newSerial       ; serial/" /etc/bind/db.steven-dujardin.sb.uclllabs.be
+
+	echo $newSerial;
         echo -e "serial updated, restarting bind9"
         ;;
 
         CNAME )
         echo -e "$3             IN      CNAME   $4." >> "/etc/bind/db.steven-dujardin.sb.uclllabs.be"
-	serialnumber=$(cat /etc/bind/db.steven-dujardin.sb.uclllabs.be | grep -P 'Serial' | grep -P [0-9] |grep -o -E '[0-9]+');
+	serialnumber=$(cat /etc/bind/db.steven-dujardin.sb.uclllabs.be | grep -iP 'Serial' | grep -P [0-9] |grep -o -E '[0-9]+');
         newSerial=$(($serialnumber + 1))
-        sed -i "s/.*Serial*./$newSerial ; Serial/" /etc/bind/db.steven-dujardin.sb.uclllabs.be
+#        sed -i "s/.*Serial*./$newSerial ; Serial/" /etc/bind/db.steven-dujardin.sb.uclllabs.be
+	sed -i "s/$serialnumber       ; serial/$newSerial       ; serial/" /etc/bind/db.steven-dujardin.sb.uclllabs.be
+
         echo $newSerial;
         echo -e "serial updated, restarting bind9"
         ;;
@@ -35,13 +39,14 @@ if [ $1 = "-t" ]; then
         esac
         else
         echo -e "$1     IN      A       $2" >> /etc/bind/db."$3"
-	serialnumber=$(cat /etc/bind/db.$3 | grep -P 'Serial' | grep -P [0-9] |grep -o -E '[0-9]+');
+	serialnumber=$(cat /etc/bind/db.$3 | grep -iP 'Serial' | grep -P [0-9] |grep -o -E '[0-9]+');
         newSerial=$(($serialnumber + 1))
         sed -i "s/$serialnumber\t\t;\sSerial/$newSerial\t\t; Serial/" /etc/bind/db.$5
         echo $newSerial;
         echo -e "serial updated, restarting bind9"
         fi
 
+	cp /etc/bind/db.steven-dujardin.sb.uclllabs.be /var/lib/bind/db.steven-dujardin.sb.uclllabs.be
         rndc reload
         systemctl restart named
 

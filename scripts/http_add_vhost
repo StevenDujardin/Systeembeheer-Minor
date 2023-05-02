@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # check if running as root
-if [ "$EUID" -ne 0 ]
-  then echo "Please run as root"
-  exit 0
-fi
+#if [ "$EUID" -ne 0 ]
+#  then echo "Please run as root"
+#  exit 0
+#fi
 
 # get domain
 if [[ "$1" != "" ]]; then
@@ -32,7 +32,7 @@ echo "<VirtualHost *:80>
 </VirtualHost>" > $(echo "/etc/apache2/sites-available/$domain.conf")
 
 # make document root with index.html
-mkdir $(echo "/var/www/$domain")
+mkdir -p $(echo "/var/www/$domain/public_html")
 touch $(echo "/var/www/$domain/public_html/index.html")
 
 # append message to index.html

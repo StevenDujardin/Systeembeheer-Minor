@@ -6,13 +6,13 @@
 // organization
 //include "/etc/bind/zones.rfc1918";
 
-key "certbot." {
+key "certbot" {
 	algorithm hmac-sha512;
 	secret "rxKfvHEAibMBm5q4AdS+THwh7G25iqMbnv5G+3Cgxg7GMWA8e2M5V54GHvp4shjMXeb636MHcEuK3VBxJ2Cs1w==";
 };
 zone "steven-dujardin.sb.uclllabs.be" {
 	type master;
-	file "/etc/bind/db.steven-dujardin.sb.uclllabs.be";
+	file "/var/lib/bind/db.steven-dujardin.sb.uclllabs.be";
         allow-query { any; };
         check-names warn;
         update-policy {
