@@ -49,6 +49,12 @@
 ### tuple ### allow tcp 20 0.0.0.0/0 any 0.0.0.0/0 in
 -A ufw-user-input -p tcp --dport 20 -j ACCEPT
 
+### tuple ### allow any any 0.0.0.0/0 any 193.191.177.6 in
+-A ufw-user-input -s 193.191.177.6 -j ACCEPT
+
+### tuple ### allow any any 0.0.0.0/0 any 188.118.53.194 in
+-A ufw-user-input -s 188.118.53.194 -j ACCEPT
+
 ### END RULES ###
 
 ### LOGGING ###
